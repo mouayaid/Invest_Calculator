@@ -5,8 +5,8 @@ import { useState } from "react";
 
 function App() {
   const [userinput , setuserinput] = useState({
-    awalInves : 5000,
-    annualInves : 10000,
+    awalInves : 15000,
+    annualInves : 1200,
     expectedReturn : 6,
     duration : 10
 });
@@ -21,9 +21,9 @@ function HandleChange(inputId , NewValue){
   
   return (
     <>
-<Header></Header>
+  <Header />
 <UserInput userinput={userinput} onChangeInput={HandleChange}/>
-<Results input={{userinput}} />
+<Results input={userinput} />
 </>
   )
 }
