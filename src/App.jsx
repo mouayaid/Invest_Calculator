@@ -10,6 +10,7 @@ function App() {
     expectedReturn: 6,
     duration: 10,
   });
+  const inputIsValid = userinput.duration >=1;
   function HandleChange(inputId, NewValue) {
     setuserinput((prevUserInput) => {
       return {
@@ -23,7 +24,8 @@ function App() {
     <>
       <Header />
       <UserInput userinput={userinput} onChangeInput={HandleChange} />
-      <Results input={userinput} />
+      {!inputIsValid && <p className="center" style={{color :'red'}}> Duration is invalide ( greater than 0) </p>}
+      {inputIsValid && <Results input={userinput} />}
     </>
   );
 }
